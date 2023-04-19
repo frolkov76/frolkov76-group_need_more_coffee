@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static java.lang.Thread.*;
+
 public class FirstTest extends BaseTest {
 
     @Test
@@ -19,7 +21,7 @@ public class FirstTest extends BaseTest {
         textBox.sendKeys("selenium");
         textBox.sendKeys(Keys.RETURN);
 
-        Thread.sleep(2000);
+        sleep(2000);
 
         WebElement text = getDriver().findElement(By.xpath("//h3[text() = 'Selenium']"));
 
@@ -37,7 +39,7 @@ public class FirstTest extends BaseTest {
         String title = getDriver().getTitle();
         Assert.assertEquals("Web form", title);
 
-        Thread.sleep(2000);
+        sleep(2000);
 
         WebElement textBox = getDriver().findElement(By.name("my-text"));
         WebElement submitButton = getDriver().findElement(By.cssSelector("button"));
